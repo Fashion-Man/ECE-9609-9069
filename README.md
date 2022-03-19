@@ -1,1 +1,1 @@
-# ECE-9609-9069
+# SQL injection vulnerability(CVE-2022-24260)
