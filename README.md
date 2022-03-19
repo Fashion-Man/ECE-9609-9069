@@ -12,18 +12,17 @@ Simple code about selecting a user.
 txtUserId = getRequestString("UserId");
 txtSQL = "SELECT * FROM Users WHERE UserId = " + txtUserId;
 ```
-
 If there is nothing can avoid the user enter the "smart" input, then the user can enter: 
 
 User ID: " or ""="
 
 Password: " or ""="
 
-The code at the server will create a valid SQL statement like this:
+A valid SQL statement will be created:
 ```SQL
 SELECT * FROM Users WHERE Name ="" or ""="" AND Pass ="" or ""=""
 ```
-
+This SQL statement will return all usernames and corresponding passwords.
 
 
 ## References
