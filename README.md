@@ -26,10 +26,11 @@ SELECT * FROM Users WHERE Name ="" or ""="" AND Pass ="" or ""=""
 ```
 This SQL statement will return all usernames and corresponding passwords.
 
-The flow chart of Keylogger:
-![alt text](https://github.com/Fashion-Man/ECE-9609-9069-Introduction-to-Hacking/blob/main/Shows-how-Keyboard-works.png)[^2]
+The flow chart of Keylogger[^2]:
+![alt text](https://github.com/Fashion-Man/ECE-9609-9069/blob/319bc06d23bd3e178305e3984bd1e1eda1ad9d09/sql%20flowchart.png)
 
 ## A SQL injection vulnerability in Voipmonitor GUI(CVE-2022-24260)
 
 ## References
 [^1]: https://www.w3schools.com/sql/sql_injection.asp
+[^2]: https://portswigger.net/web-security/sql-injection
