@@ -2,6 +2,8 @@
 ## Useful links:
 [CVE-2022-24260](https://www.cvedetails.com/cve/CVE-2022-24260/)
 
+[SQL Injection(Wikipedia)](https://en.wikipedia.org/wiki/SQL_injection)
+
 ## What is SQL injection
 SQL Injection is a security vulnerability that occurswhen you ask a user for input, and it is the most common and simplest vulnerability in websites.[^1] The main reason is that the program does not judge and process the legitimacy of the user input data, so that the attacker can add additional SQL statements to the predefined SQL statements in the Web application, and perform illegal operations without the administrator's knowledge. In this way, the database server can be deceived to execute unauthorized arbitrary queries, thereby further obtaining data information.
 
@@ -24,6 +26,10 @@ SELECT * FROM Users WHERE Name ="" or ""="" AND Pass ="" or ""=""
 ```
 This SQL statement will return all usernames and corresponding passwords.
 
+The flow chart of Keylogger:
+![alt text](https://github.com/Fashion-Man/ECE-9609-9069-Introduction-to-Hacking/blob/main/Shows-how-Keyboard-works.png)[^2]
+
+## A SQL injection vulnerability in Voipmonitor GUI(CVE-2022-24260)
 
 ## References
 [^1]: https://www.w3schools.com/sql/sql_injection.asp
