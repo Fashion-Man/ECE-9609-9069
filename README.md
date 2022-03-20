@@ -45,7 +45,11 @@ Given these defenses, the question then rises; why are SQL injections a threat a
 Many factors contribute to the answer of this question. 
 Firstly, the number of servers,volume and applications of code are rapidly increasing on web sites. Furthermore, they interact with each other in uncertain ways. Another reason could be that activities such as updating and patching servers and applications routinely that are important to defending websites may be postponed by IT departments too often which leaves websites vulnerable to attacks. Another issue that creates hidden holes in security routines is a high staff turnover and layoff rate. Lastly and simply, the number of attacks on websites and the tools required to successfully hack websites is increasing at a constant rate. To be protected, security checks must be consistent and diligent. 
 
-## Impacts and significances of SQL injection. 
+## The users
+Users of SQL injection are typically hackers. 
+Hackers use SQL injection to change and update data from websites while also adding new data into a database. For example, in the context of financial applications, SQL injection can be used to change the balance of accounts and steal information. More dangerously, an attacker can obtain administrative rights to an application database. Most information that is stolen consists of login credentials, email addresses, and personally identifiable information that is then sold on the dark web. The threat posed by hackers to users and their organizations are imperative to protect against. 
+
+## Impacts and significances of SQL injection.[^4] 
 1. Attackers can access data in the database without authorization, thereby stealing user data and causing user information leakage.
 2. Add or delete data in the database, such as deleting a table of important data in the database.
 3. If the website directory has write permission, the attacker can tamper with the webpage and publish some illegal information.
@@ -56,3 +60,4 @@ Firstly, the number of servers,volume and applications of code are rapidly incre
 [^1]: https://www.w3schools.com/sql/sql_injection.asp
 [^2]: https://portswigger.net/web-security/sql-injection
 [^3]: https://www.cvedetails.com/cve/CVE-2022-24260/
+[^4]: https://www.packetlabs.net/posts/sql-injection/
