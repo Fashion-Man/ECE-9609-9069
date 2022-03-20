@@ -43,6 +43,12 @@ Given these defenses, the question then rises; why are SQL injections a threat a
 Many factors contribute to the answer of this question. 
 Firstly, the number of servers,volume and applications of code are rapidly increasing on web sites. Furthermore, they interact with each other in uncertain ways. Another reason could be that activities such as updating and patching servers and applications routinely that are important to defending websites may be postponed by IT departments too often which leaves websites vulnerable to attacks. Another issue that creates hidden holes in security routines is a high staff turnover and layoff rate. Lastly and simply, the number of attacks on websites and the tools required to successfully hack websites is increasing at a constant rate. To be protected, security checks must be consistent and diligent. 
 
+## Impacts and significances of SQL injection. 
+1. Attackers can access data in the database without authorization, thereby stealing user data and causing user information leakage.
+2. Add or delete data in the database, such as deleting a table of important data in the database.
+3. If the website directory has write permission, the attacker can tamper with the webpage and publish some illegal information.
+4. Obtain the highest authority of the server, remotely control the server.
+5. Install backdoors to modify or control the operating system.
 
 ## References
 [^1]: https://www.w3schools.com/sql/sql_injection.asp
