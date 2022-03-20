@@ -35,7 +35,7 @@ The flow chart of Keylogger[^2]:
 This new sql injects for unauthenticated users allowing gaining admin privileges[^3]
 ![alt text](https://github.com/Fashion-Man/ECE-9609-9069/blob/2096952ca2904c53f01479636923d7ca39375454/cvss.png)
 
-## How to fix the SQL vulnerability
+## How to fix the SQL vulnerability[^4]
 Since websites typically require sustained access to databases, very little and often no defense is given by firewalls against SQL injection attacks and every visitor on a website should be given access to the database. Furthermore, since antivirus programs are expected to identify and halt incoming data of a very different kind, they are equally ineffective against stopping SQL injection vulnerabilities. 
 
 Two parts make up a defense against SQL injection vulnerabilities. The first defense is to perform routine updates of all servers and applications as well as patching all servers and applications. The second part of the defense is to mitigate attacks by assembling well-written code as well as well tested code that can prohibit SQL commands that are not foreseen.  
@@ -49,7 +49,7 @@ Firstly, the number of servers,volume and applications of code are rapidly incre
 Users of SQL injection are typically hackers. 
 Hackers use SQL injection to change and update data from websites while also adding new data into a database. For example, in the context of financial applications, SQL injection can be used to change the balance of accounts and steal information. More dangerously, an attacker can obtain administrative rights to an application database. Most information that is stolen consists of login credentials, email addresses, and personally identifiable information that is then sold on the dark web. The threat posed by hackers to users and their organizations are imperative to protect against. 
 
-## Impacts and significances of SQL injection.[^4] 
+## Impacts and significances of SQL injection[^5] 
 1. Attackers can access data in the database without authorization, thereby stealing user data and causing user information leakage.
 2. Add or delete data in the database, such as deleting a table of important data in the database.
 3. If the website directory has write permission, the attacker can tamper with the webpage and publish some illegal information.
@@ -60,4 +60,5 @@ Hackers use SQL injection to change and update data from websites while also add
 [^1]: https://www.w3schools.com/sql/sql_injection.asp
 [^2]: https://portswigger.net/web-security/sql-injection
 [^3]: https://www.cvedetails.com/cve/CVE-2022-24260/
-[^4]: https://www.packetlabs.net/posts/sql-injection/
+[^4]: https://beyondsecurity.com/about-sql-injection.html 
+[^5]: https://www.packetlabs.net/posts/sql-injection/
