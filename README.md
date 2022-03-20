@@ -62,3 +62,6 @@ Hackers use SQL injection to change and update data from websites while also add
 [^3]: https://www.cvedetails.com/cve/CVE-2022-24260/
 [^4]: https://beyondsecurity.com/about-sql-injection.html 
 [^5]: https://www.packetlabs.net/posts/sql-injection/
+[^6]: https://kerbit.io/research/read/blog/3 
+[^7]: https://portswigger.net/web-security/sql-injection
+[^8]: https://www.contrastsecurity.com/knowledge-hub/glossary/sql-injection#:~:text=Attackers%20use%20SQL%20injection%20to,rights%20to%20an%20application%20database. 
