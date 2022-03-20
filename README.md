@@ -31,7 +31,7 @@ The flow chart of Keylogger[^2]:
 
 ## A SQL injection vulnerability in Voipmonitor GUI(CVE-2022-24260)
 This new sql injects for unauthenticated users allowing gaining admin privileges[^3]
-![alt text](https://github.com/Fashion-Man/ECE-9609-9069/blob/319bc06d23bd3e178305e3984bd1e1eda1ad9d09/sql%20flowchart.png)
+![alt text](https://github.com/Fashion-Man/ECE-9609-9069/blob/2096952ca2904c53f01479636923d7ca39375454/cvss.png)
 
 ## How to fix the SQL vulnerability
 Since websites typically require sustained access to databases, very little and often no defense is given by firewalls against SQL injection attacks and every visitor on a website should be given access to the database. Furthermore, since antivirus programs are expected to identify and halt incoming data of a very different kind, they are equally ineffective against stopping SQL injection vulnerabilities. 
